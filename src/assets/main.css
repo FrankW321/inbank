@@ -1,0 +1,35 @@
+@import './base.css';
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#app {
+  width: fit-content;
+  margin: 0 auto;
+  padding: 2rem;
+  font-weight: normal;
+  background-color: #fbfbf9 !important;
+  font-family: 'Bitter';
+  letter-spacing: 0.5px;
+  font-weight: 400;
+}
+
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+  padding: 3px;
+}
+
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+    place-items: center;
+    background-color: #fbfbf9 !important;
+  }
+}
