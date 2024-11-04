@@ -81,22 +81,7 @@ import { useRouter } from 'vue-router'
 import { useUserStore } from '@/stores/userStore'
 /* import { submitUserData } from '../../api/apiService' */
 import FormInput from '../FormInput.vue'
-
-interface FormData {
-  firstName: string
-  lastName: string
-  mobileNumber: string
-  email: string
-  monthlyIncome: string
-}
-
-interface Errors {
-  firstName: string
-  lastName: string
-  mobileNumber: string
-  email: string
-  monthlyIncome: string
-}
+import type { FormData, Errors } from '../../types'
 
 export default {
   name: 'LoanModal',
