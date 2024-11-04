@@ -82,6 +82,22 @@ import { useUserStore } from '@/stores/userStore'
 /* import { submitUserData } from '../../api/apiService' */
 import FormInput from '../FormInput.vue'
 
+interface FormData {
+  firstName: string
+  lastName: string
+  mobileNumber: string
+  email: string
+  monthlyIncome: string
+}
+
+interface Errors {
+  firstName: string
+  lastName: string
+  mobileNumber: string
+  email: string
+  monthlyIncome: string
+}
+
 export default {
   name: 'LoanModal',
   components: {
@@ -91,14 +107,14 @@ export default {
     const router = useRouter()
     const userStore = useUserStore()
 
-    const formData = ref({
+    const formData = ref<FormData>({
       firstName: '',
       lastName: '',
       mobileNumber: '',
       email: '',
       monthlyIncome: '',
     })
-    const errors = ref<Record<string, string>>({
+    const errors = ref<Errors>({
       firstName: '',
       lastName: '',
       mobileNumber: '',
@@ -110,7 +126,7 @@ export default {
       emit('close-modal')
     }
 
-    const validateForm = () => {
+    const validateForm = (): boolean => {
       errors.value = {
         firstName: '',
         lastName: '',
@@ -154,7 +170,7 @@ export default {
       return isValid
     }
 
-    const submitForm = async () => {
+    const submitForm = async (): Promise<void> => {
       if (validateForm()) {
         userStore.setUser(
           `${formData.value.firstName} ${formData.value.lastName}`,

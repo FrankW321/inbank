@@ -225,6 +225,7 @@ export default defineComponent({
 }
 
 .custom-slider {
+  appearance: none;
   -webkit-appearance: none;
   width: 100%;
   height: 6px;
